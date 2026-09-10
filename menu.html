@@ -6,159 +6,206 @@
     <title>Menu - BiteBox</title>
 </head>
 <body>
-    <h1>Menu</h1>
-    <p>
-<a href="index.html">Home</a>
-|
-<a href="menu.html">Menu</a>
-|
-<a href="about.html">About</a>
-|
-<a href="contact.html">Contact</a>
-</p>
-<h2>Our Popular Dishes</h2>
- 
-<img
-src="assest/image/Pizza.jfif"
-alt="Pizza"
-width="250"
-height="180">
-<h3>Cheesy Veg Pizza</h3>
-<p>Loaded with fresh vegetables and topped with delicious 
-mozzarella cheese.</p>
- 
-<img
-src="assest/image/Burger.jfif"
-alt="Burger"
-width="250"
-height="180">
-<h3>Classic Cheese Burger</h3>
- <p> 
-  A juicy grilled burger served with fresh vegetables 
-  and cheese.
-</p>
- 
-<img
-src="assest/image/Pasta.jfif"
-alt="Pasta"
-width="250"
-height="180">
-<h3>Creamy White Sauce Pasta</h3>
- <p>
-Rich and creamy pasta prepared with fresh herbs and 
-vegetables.
-</p>
+    <header>
+        <img src="assest/image/logo.png" alt="BiteBox Logo" 
+        width="150">
+    <nav>
+      <a href="index.html">Home</a>
+      |
+      <a href="menu.html">Menu</a>
+      |
+      <a href="about.html">About</a>
+      |
+      <a href="contact.html">Contact</a>
+    </nav>
+</header>
 
-<img
-src="assest/image/Fries.jfif"
-alt="Fries"
-width="250"
-height="180">
-<h3>Crispy French Fries</h3>
-<p>
-Golden and crispy fries served hot with a deliciously savory seasoning.
-</p>
+    <section id="menu-hero">
+    <h1>Explore Our Delicious Menu</h1>
+ 
+    <p>Discover freshly prepared pizzas, burgers, pasta,
+       biryani, desserts and many more delicious dishes
+       made with premium ingredients.
+    </p>
+  </section>
 
- <img
-src="assest/image/Sandwich.jfif"
-alt="Sandwich"
-width="250"
-height="180">
-<h2> Food Categories </h2>
-<h3>Fresh Veg Sandwich</h3>
-<p>
-Delicious sandwich prepared with fresh vegetables, herbs, and flavorful sauces.
-</p>
+  <section id="categories">
+    <h2>Browse Categories</h2>
 
- <ul>
-  <li>Pizza</li>
-<li>Burgers</li>
-<li>Pasta</li>
-<li>Sandwiches</li>
-<li>Beverages</li>
-</ul>
+    <div>
+      <article>
+        <img src="assest/icon/pizza.jpg" alt="Pizza" width="120" height="120">
+        <h3>Pizza</h3>
+      </article>
+
+
+      <article>
+        <img src="assest/icon/burger.jpg" alt="Burger" width="120" height="120">
+        <h3>Burger</h3>
+      </article>
+
+
+      <article>
+        <img src="assest/icon/pasta.jpg" width="120" height="120">
+        <h3>Pasta</h3>
+      </article>
+
+
+      <article>
+        <img src="assest/icon/biryani.jpg" width="120" height="120">
+        <h3>Biryani</h3>
+      </article>
+
+
+      <article>
+        <img src="assest/icon/cake.jpg" alt="Desserts" width="120" height="120">
+        <h3>Desserts</h3>
+      </article>
+    </div>
+
+</section>
+
+<section id="menu-items">
+   <h2>Our Menu</h2>
+   <div>
+      
+       <article>
+           <img src="assest/image/Pizza.jfif"  width="220">
+            <h3>Margherita Pizza</h3>
+            <p> ⭐⭐⭐⭐⭐ <small>(120)</small> </p>
+            <p> <strong>₹249</strong></p>
+            <button> Add to Cart </button>
+        </article>
+
+        <article>
+            <img src="assest/image/Burger.jfif" width="220">
+            <h3>Cheese Burger</h3>
+            <p>⭐⭐⭐⭐⭐<small>(98)</small></p>
+            <p> <strong> ₹199 </strong> </p>
+   <button> Add to Cart </button>
+        </article>
+
+        <article>
+            <img src="assest/image/Pasta.jfif" width="220">
+            <h3>Creamy Alfredo Pasta</h3>
+            <p>⭐⭐⭐⭐⭐ <small> (85) </small>
+            </p>
+            <p> <strong>₹229</strong> </p>
+            <button> Add to Cart  </button>
+        </article>
+
+        <article>
+            <img src="assest/image/veg biryani.jpg" width="220">
+            <h3>Veg Biryani</h3>
+            <p> ⭐⭐⭐⭐⭐ <small>(110)</small> </p>
+            <p> <strong>₹279</strong> </p>
+            <button> Add to Cart </button>
+        </article>
+
+        <article>
+            <img src="assest/image/cakes.jpg" width="220">
+            <h3>Choco Cake</h3>
+            <p> ⭐⭐⭐⭐⭐ <small>(75)</small> </p>
+            <p> <strong>₹149</strong> </p>
+            <button> Add to Cart </button>
+        </article>
+
+        <article>
+            <img src="assest/image/Sandwich.jfif" width="220">
+            <h3>Veg Club Sandwich</h3>
+            <p>⭐⭐⭐⭐⭐<small>(60)</small> </p>
+            <p> <strong>₹179</strong> </p>
+            <button> Add to Cart </button>
+        </article>
+
+    </div>
+</section>
+
+<section id="offer">
+    <div class="offer-content">
+        <h2>Today's Special Offer!</h2>
+        <p>Get <strong>20% OFF</strong> on all orders above
+        <strong>₹499</strong>
+        </p>
+        <p> Use Code: <strong>BITE20</strong> </p>
+        <a href="menu.html"> Order Now </a>
+    </div>
+ 
+    <div class="offer-image">
+        <img src="assest/image/pizza-discount.jpg" width="320">
+    </div>
+</section>
+
+<footer>
+    <section>
+        <img src="assest/image/logo.png" alt="BiteBox Logo" 
+        width="150">
+        <p> Delicious food delivered to your doorstep.
+            Fresh, fast and tasty!
+        </p>
+
+        <a href="#">
+            <img src="assest/icon/facebook.jpg" alt="Facebook" width="35" height="35">
+        </a>
+
+        <a href="#">
+            <img src="assest/icon/instagram.jpg" alt="Instagram" width="35" height="35">
+        </a>
+
+        <a href="#">
+            <img src="assest/icon/twitter.jpg" alt="Twitter" width="35" height="35">
+        </a>
+
+ <a href="#">
+            <img src="assest/icon/youtube.jpg" alt="YouTube" width="35" height="35">
+        </a>
+    </section>
 <hr>
-<h2>Restraurant Menu</h2>
-<table border="1"
-cellpadding="10"
-cellspacing="0">
-    <caption> BiteBox Menu</caption>
-    <tr>
-        <th>Category</th>
-<th>Food Item</th>
-<th>Price</th>
-<th>Availability</th>
-  </tr>
-<tr>
-  <td rowspan="3">Pizza</td>
-  <td>Veg Pizza</td>
-  <td>₹299</td>
- <td>Available</td>
- </tr>
- <tr>
-    <td>Farmhouse Pizza</td>
-    <td>₹349</td>
-    <td>Available</td>
-</tr>
-<tr>
-    <td>Paneer Pizza</td>
-    <td>₹329</td>
-    <td>Limited</td>
-</tr>
+    <section>
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </u >
+        </section>
+    <hr>
 
- <tr>
-    <td>Burger</td>
-    <td>Cheese Burger</td>
-    <td>₹199</td>
-    <td>Available</td>
-</tr>
-<tr>
-    <td>Pasta</td>
-    <td>White Sauce Pasta</td>
-    <td>₹249</td>
-    <td>Available</td>
-</tr>
-<tr>
-    <td>Sandwich</td>
-    <td>Veg Grilled Sandwich</td>
-    <td>₹179</td>
-    <td>Available</td>
-  </tr>
-<tr>
-    <td>Fries</td>
-    <td>French Fries</td>
-    <td>₹99</td>
-    <td>Available</td>
-</tr>
-<tr align="center">
- 
-    <td colspan="4">
-         Weekend Offer:
-        Flat 20% OFF on Combo Meals
- 
-    </td>
- 
-</tr>
-</table>
+    <section>
+        <h3>Customer Service</h3>
+        <ul>
+            <li>Track Order</li>
+            <li>FAQs</li>
+            <li>Shipping Policy</li>
+            <li>Return Policy</li>
+            <li>Terms & Conditions</li>
+        </ul>
+    </section>
+ <hr>
 
+    <section>
+        <h3>Contact Us</h3>
+        <p>📞 +91 98765 43210</p>
+        <p>✉ support@bitebox.com</p>
+        <p>📍 123 Food Street, Mumbai, Maharashtra 400001 </p>
+    </section>
+
+    <hr>
     
+    <section>
+        <h3>Payment Methods</h3>
+        <img src="assest/image/visa.jpg" alt="Visa" width="60">
+        <img src="assest/image/mastercard.jpg" alt="MasterCard" width="60">
+        <img src="assest/image/upi.jpg" alt="UPI" width="60">
+        <img src="assest/image/paytm.jpg"  alt="Paytm" width="60">
+    </section>
 
-<h2> How to Place an Order </h2>
-<ol>
-    <li>Select your favourite food.</li>
-    <li>Add the item to your cart.</li>
-    <li>Confirm your order.</li>
-    <li>Enjoy your meal.</li>
-</ol>
-<h2> Restraurant Information</h2>
-<p>Delivery Available</p>
-<p> Open Every Day</p>
-<p>Fresh Ingredients</p>
-<span>Delivery Available</span>
-<span>|</span>
-<span>Open Every Day</span>
-<span>|</span>
-<span>Fresh Ingredients</span>
+    <hr>
+    <p> © 2026 BiteBox. All Rights Reserved. </p>
 
+</footer>
+  
 </body>
 </html>
