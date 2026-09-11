@@ -6,8 +6,138 @@
     <title>Cart</title>
 </head>
 <body>
-    <footer>
+    <header>
+        <img src="assest/image/logo.png" alt="BiteBox Logo" 
+        width="150">
+    <nav>
+      <a href="index.html">Home</a>
+      |
+      <a href="menu.html">Menu</a>
+      |
+      <a href="about.html">About</a>
+      |
+      <a href="contact.html">Contact</a>
 
+      <a href="cart.html">
+                <img src="assest/icon/cart.jpg" alt="Cart Icon" width="22" 
+                height="22">
+            </a>
+    </nav>
+    </header>
+<section id="cart-hero">
+    <div class="hero-content">
+        <h2> Your Shopping Card</h2>
+            <P>Review your selected food items before processing to checkout.
+</P>
+<hr>
+<P>Update quantities, remove items, and confirm your order with ease.
+    </P>   
+    </div>
+</section>
+
+<section id="shopping-cart">
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <img src="assest/image/Pizza.jfif" alt="Margherita Pizza" width="80">
+                    <h3>Margherita Pizza</h3>
+                    <p>Classic delight with fresh cheese & basil.</p>
+                </td>
+                <td>₹249</td>
+                <td>
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </td>
+                <td>₹249</td>
+                <td>
+                    <a href="#"> <img src="assest/icon/delete.jpg" width="25"> </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img src="assest/image/Burger.jfif" width="80">
+                    <h3>Cheese Burger</h3>
+                    <p>Juicy grilled burger with cheese & veggies.</p>
+                </td>
+                <td>₹189</td>
+                <td>
+                    <button>-</button>
+                    <span>2</span>
+                    <button>+</button>
+                </td>
+                <td>₹378</td>
+                <td>
+                    <a href="#"> <img src="assest/icon/delete.jpg" width="25"></a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img src="assest/image/Pasta.jfif" alt="Creamy Pasta" width="80">
+                    <h3>Creamy Pasta</h3>
+                    <p>Delicious white sauce pasta with herbs.</p>
+                </td>
+                <td>₹199</td>
+                <td>
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </td>
+                <td>₹199</td>
+                <td>
+                    <a href="#"> <img src="assest/icon/delete.jpg" width="25"> </a>
+                </td>
+            </tr>
+      </tbody>
+ </table>
+
+</section>
+    
+<aside id="order-summary">
+    <h2>Order Summary</h2>
+  
+    <p> <span>Subtotal (3 Items)</span> <span>₹826.00</span> </p>
+  
+    <p> <span>Delivery Charges</span> <span>₹40.00</span> </p>
+  
+    <p> <span>Packaging Charges</span> <span>₹20.00</span> </p>
+  
+    <hr>
+    <h3> <span>Total Amount</span> <span>₹886.00</span> </h3>
+  
+    <button type="button"> Proceed to Checkout </button>
+    <p> <img src="assest/icon/shield.jpg" width="18" height="18">
+    Secure Checkout </p>
+</aside>
+
+<section id="cart-actions">
+ 
+    <a href="menu.html">
+        <img src="assest/icon/left-arrow.jpg" width="18" height="18">
+        Continue Shopping
+    </a>
+ 
+    <button type="button">
+      
+        <img src="assest/icon/delete.jpg" width="18" height="18">  Clear Cart
+      
+    </button>
+ </section>
+
+    <footer>
     <section>
         <img src="assest/image/logo.png" alt="BiteBox Logo" 
         width="150">
