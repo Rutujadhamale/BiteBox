@@ -1,0 +1,83 @@
+#menu-hero{
+    background-image: url("../assest/image/menu-background.jpg");
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+    background-size: cover;
+
+    height: 320px;
+    text-align: center;
+    padding-top: 65px;
+}
+
+#menu-hero h1{
+    font-family: "Great Vibes", cursive;
+   font-size:56px;
+   line-height:60px;
+
+    font-weight: 400;
+
+    color: white;
+
+    text-align: center;
+
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+
+    margin-bottom: 10px;
+}
+
+#menu-hero p{
+    color: white;
+
+    font-size: 20px;
+
+    line-height: 34px;
+
+    width: 700px;
+
+    text-align: center;
+
+    margin: 0 auto 35px;
+}
+
+/* Browse Categories Section */
+
+#categories{
+
+    background-color: #ffffff;
+
+    padding: 60px 80px;
+
+    text-align: center;
+
+}
+
+#categories h2{
+    font-size: 40px;
+
+    font-weight: 700;
+
+    color: #222222;
+
+    margin-bottom: 50px;
+
+    position: relative;
+
+    display: inline-block;
+}
+
+#categories h2{
+    font-size: 40px;
+
+    font-weight: 700;
+
+    color: #222222;
+
+    margin-bottom: 50px;
+
+    position: relative;
+
+    display: inline-block;
+}
