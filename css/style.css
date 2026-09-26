@@ -114,3 +114,400 @@ nav a:hover{
  
 }
 
+#features{
+    background-color: #ffffff;
+    padding:45px 25px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* section Heading*/
+#features h2{
+ width: 100%;
+ text-align: center;
+ font-size: 42px;
+ font-weight: 700;
+ color: #222222;
+margin-bottom: 40px;
+position:relative;
+}
+
+#features h2::after{
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    background-color: #ff6b00;
+    margin: 10px auto 0;
+}
+
+/*Features Card*/
+#features article{
+    width: 300px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #e5e5e5;
+}
+
+#features article:last-child{
+    border-right: none;
+}
+
+/*Features Icon*/
+#features article img{
+    width: 70px;
+    height: 70px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+/* Feature Content */
+#features article div{
+    flex: 1;
+}
+
+/* Feature Title */
+#features article h3{
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 6px;
+}
+
+/*Feature Description*/
+#features article p{
+    font-size: 16px;
+    color: #3a3939;
+    line-height: 21px;
+    margin: 0;
+}
+
+/* Popular Dishes section*/
+#popular-dishes{
+    background-color: #ffffff;
+    padding: 60px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:18px;
+}
+
+/*Section Heading*/
+#popular-dishes h2{
+    width: 100%;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 22px;
+    position: relative;
+}
+
+#popular-dishes h2::after{
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    background-color: #ff6b00;
+    margin: 10px auto 0;
+}
+
+/*Dish Card*/
+#popular-dishes article{
+    width: 225px;
+    background-color: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+}
+
+/*Food Image*/
+#popular-dishes article img{
+    width:100%;
+    height: 135px;
+    object-fit: cover;
+    display: block;
+}
+
+/*Dish Name*/
+#popular-dishes article h3{
+    font-size: 18px;
+    font-weight: 700;
+    color: #222222;
+    margin: 10px 12px 6px;
+}
+
+/*Rating & Price*/
+#popular-dishes .details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px 10px;
+}
+
+/*Ratings*/
+#popular-dishes .rating smalll{
+    color: #666666;
+    font-size: 12px;
+}
+
+/*Hover Effect*/
+#popular-dishes article:hover{
+    box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+}
+
+#offer{
+    width:95%;
+    height:250px;
+    margin:70px auto;
+    padding:28px 55px;
+    box-sizing:border-box;
+    background-image:url("../assest/image/offer-banner.jpeg");
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    background-position:center;
+    border-radius:20px;
+}
+
+/* Offer Content */
+.offer-content{
+    width:38%;
+}
+
+/* Heading */
+.offer-content h2{
+    font-size:34px;
+    font-weight:800;
+    color:#ffffff;
+    line-height:1.15;
+    margin-bottom:15px;
+}
+
+.offer-content h2 span{
+    background:linear-gradient(180deg,#ffffff 0%,#fff9d8 25%,#ffe47a 55%,#ffc107 80%,#ff9800 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+}
+
+/* Description */
+.offer-content p{
+    font-size:18px;
+    color:#ffffff;
+    line-height:1.5;
+    margin-bottom:10px;
+}
+
+.offer-content strong{
+    color:#ffb400;
+}
+
+/* Button */
+.offer-content a{
+    display:inline-block;
+    margin-top:8px;
+    padding:12px 32px;
+    background:#ff3b30;
+    color:#ffffff;
+    text-decoration:none;
+    font-size:17px;
+    font-weight:600;
+ border-radius:8px;
+    width: 200px;
+    text-align: center;
+}
+
+.offer-content a:hover{
+    background-color: #D32F2F;
+}
+
+#reviews{
+    background: #ffffff;
+    padding: 60px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:22px;
+}
+
+/*section Heading*/
+#reviews h2{
+    width: 100%;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+#reviews h2::after{
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    background: #ff6b00;
+    margin:10px auto 0;
+}
+
+/* Review Card*/
+
+#reviews article{
+    width: 330px;
+    background: #ffffff;
+    padding: 22px 20px 18px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+    position: relative;
+}
+
+/* Quote Icon */
+
+#reviews article::before{
+    content:"❝";
+    position:absolute;
+    top:-14px;
+    left:18px;
+    font-size:42px;
+    color:#ff3b30;
+    background:#ffffff;
+    line-height:1;
+    padding:0 4px;
+}
+
+/* Review Text */
+
+#reviews article>p{
+    font-size:15px;
+    color:#444444;
+    line-height:22px;
+    margin:0 0 14px;
+}
+
+/* Customer Section */
+
+#reviews .customer{
+    display:flex;
+    align-items:center;
+}
+
+/* Customer Image */
+
+#reviews .customer img{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-right:10px;
+}
+
+/* Customer Name */
+
+#reviews .customer h3{
+    font-size:17px;
+    font-weight:700;
+    color:#222222;
+    margin:0 0 4px;
+}
+/* Rating */
+
+#reviews .customer span{
+    color:#f5b301;
+    font-size:16px;
+}
+
+/* Hover Effect */
+
+#reviews article:hover{
+    box-shadow:0 8px 20px rgba(0,0,0,0.18);
+}
+
+/*Newsletter section*/
+#newsletter{
+    width: 100%;
+    margin: 10px 0 0;
+    padding: 10px 65px;
+    background: linear-gradient(to right,#F44336,#e53935,#d32f2f);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/*Left Content*/
+.newsletter-content{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/*Mail Icon*/
+.newsletter-content img{
+    width: 55px;
+    height: 55px;
+    background: #ffffff;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+/*Heading*/
+.newsletter-content h2{
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 2px;
+    line-height: 1.1;
+}
+
+/*Description*/
+.newsletter-content p{
+    font-size: 15px;
+    color: #ffeaea;
+    line-height: 20px;
+    margin: 0;
+}
+
+/* Newsletter Form */
+.newsletter-form{
+    display:flex;
+    align-items:center;
+}
+
+/* Email Input */
+.newsletter-form input{
+    width:300px;
+    height:38px;
+    border:none;
+    outline:none;
+    padding:0 14px;
+    font-size:14px;
+    border-radius:4px 0 0 4px;
+}
+
+/* Subscribe Button */
+.newsletter-form button{
+    height:38px;
+    padding:0 24px;
+    border:none;
+    background:#111111;
+    color:#ffffff;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    border-radius:0 4px 4px 0;
+}
+
+/* Newsletter Image */
+.newsletter-image img{
+    width:140px;
+    height:auto;
+    display:block;
+}
+
+/* Hover Effect */
+
+.newsletter-form button:hover{
+    background:#000000;
+}
