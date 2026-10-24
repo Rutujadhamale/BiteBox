@@ -490,6 +490,73 @@ nav a.active {
     background:#ff5722;
 }
 
+.menu-search{
+    width: 450px;
+    height: 48px;
+    padding: 12px 15px;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+/*search Input*/
+.menu-search input{
+    flex: 1;
+    height: 100%;
+    padding: 0 18px;
+    border: none;
+    outline: none;
+    font-family: 'POppins', sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: transparent;
+}
+
+/*Placeholder*/
+.menu-search input::placeholder{
+    color: #777;
+    font-size: 18px;
+}
+.search-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:25px auto;
+}
+
+/* Search Button */
+.menu-search button {
+    width: 52px;
+    height: 100%;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    background-color: #ff4b2b;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.menu-search button:hover{
+    background-color: #ac1f06 ;
+
+}
+
+/* Search Icon */
+.menu-search button img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
 /* Food Image */
 
 #menu-items article img{
@@ -663,4 +730,25 @@ footer > p{
     color: #bdbdbd;
     padding: 18px 0;
     font-size: 15px;
+}
+
+.cart-wrapper {
+    position: relative;
+    display: inline-flex;
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    width: 18px;
+    height: 18px;
+    background: #ff3b30;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

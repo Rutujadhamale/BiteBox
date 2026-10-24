@@ -187,41 +187,76 @@ if (menuContainer) {
     });
 }
 
-function increaseQuantity(index) {
-    if (!cart[index]) return;
+// function increaseQuantity(index) {
+//     if (!cart[index]) return;
 
+//     cart[index].quantity++;
+//     saveCart();
+//     renderCart();
+//     updateOrderSummary();
+// }
+function increaseQuantity(index) {
     cart[index].quantity++;
-    saveCart();
+    localStorage.setItem(
+        "biteboxCart",
+        JSON.stringify(cart)
+    );
     renderCart();
     updateOrderSummary();
+    updateCartCount();
 }
 
-function decreaseQuantity(index) {
-    if (!cart[index]) return;
+// function decreaseQuantity(index) {
+//     if (!cart[index]) return;
 
+//     if (cart[index].quantity > 1) {
+//         cart[index].quantity--;
+//         saveCart();
+//     }
+
+//     renderCart();
+//     updateCartCount();
+//     updateOrderSummary();
+// }
+function decreaseQuantity(index) {
     if (cart[index].quantity > 1) {
         cart[index].quantity--;
-        saveCart();
+        localStorage.setItem(
+            "biteboxCart",
+            JSON.stringify(cart)
+        );
     }
-
     renderCart();
     updateOrderSummary();
+    updateCartCount();
 }
 
+// function removeFromCart(index) {
+//     if (index < 0 || index >= cart.length) return;
+
+//     cart.splice(index, 1);
+//     saveCart();
+//     renderCart();
+//     updateOrderSummary();
+// }
 function removeFromCart(index) {
-    if (index < 0 || index >= cart.length) return;
-
+  
     cart.splice(index, 1);
-    saveCart();
+    localStorage.setItem("biteboxCart", JSON.stringify(cart));
+
     renderCart();
     updateOrderSummary();
+    updateCartCount();
+
 }
+
 
 function clearCart() {
     cart = [];
     localStorage.removeItem("biteboxCart");
     renderCart();
     updateOrderSummary();
+    updateCartCount();
 }
 
 const cartBody = document.querySelector("#shopping-cart tbody");
@@ -259,3 +294,245 @@ if (clearCartButton) {
 
 renderCart();
 updateOrderSummary();
+
+let menuCards = document.querySelectorAll("#menu-items article");
+ 
+let searchInput = document.getElementById("menu-search");
+
+let searchButton = document.getElementById("search-button");
+
+function searchMenu (searchText){
+    let searchValue = searchText .trim().toLowerCase();
+
+    menuCards.forEach(function(card){
+        let foodName = card.querySelector("h3").textContent.trim().toLowerCase();
+
+        if (foodName.includes(searchValue)){
+            card.style.display = "";
+        }else{
+            card.style.display = "none";
+        }
+    });
+}
+
+if (searchButton) {
+    searchButton.addEventListener(
+        "click",
+        function() {
+
+            searchMenu(
+                searchInput.value
+            );
+        }
+    );
+
+}
+
+if (searchButton){
+    searchButton.addEventListener(
+        "click",function(){
+            searchMenu(
+                searchInput.value
+            );
+        }
+    );
+}
+
+let categoryCards = document.querySelectorAll("#categories article");
+
+function filterMenu(category) {
+ 
+    menuCards.forEach(function(card) {
+        let cardCategory = card.dataset.category.toLowerCase();
+ 
+        if (cardCategory === category) {
+            card.style.display = "";
+        }
+        else {
+            card.style.display = "none";
+        }
+    });
+ 
+}
+
+categoryCards.forEach(
+    function(card) {
+ 
+        card.addEventListener("click",function() {
+                let category = card.querySelector("h3")
+                        .textContent
+                        .trim()
+                        .toLowerCase();
+                filterMenu(category);
+            }
+        );
+    }
+)
+
+let themeButton = document.getElementById("theme-toggle");
+ 
+function toggleTheme(){
+    document.body.classList.toggle("dark-theme");
+
+    let themeIcon = themeButton.querySelector(".theme-icon");
+
+    let themeText = themeButton.querySelector(".theme-text");
+
+    if (document.body.classList.contains("dark-theme")){
+        themeIcon.textContent = "☾";
+        themeText.textContent = "Night Mode";
+        localStorage.setItem("biteboxTheme","dark");
+    }else{
+        themeIcon.textContent = "☀";
+        themeText.textContent ="DAY MODE";
+        localStorage.setItem("biteboxTheme","light");
+    }
+}
+
+function loadTheme(){
+    let savedTheme = localStorage.getItem("biteTheme");
+
+    /*Disable animation while loading*/
+    document.body.classList.add("theme-loading");
+
+    if (savedTheme === "dark"){
+        document.body.classList.add("dark-theme");
+    }else{
+        document.body.classList.remove("dark-theme");
+    }
+
+    let themeIcon = themeButton.querySelector(".theme-icon");
+    let themeText = themeButton.querySelector(".theme-text");
+
+    if (savedTheme === "dark"){
+       if(themeIcon){
+        themeIcon.textContent = "☾";
+       }
+       if  (themeText){
+        themeText.textContent = "NIGHT MODE";
+       }
+    }else{
+        if (themeIcon){
+            themeIcon.textContent = "☀";
+        }
+        if (themeText){
+            themeText.textContent = "DAY MODE";
+        }
+    }
+    /*Allow animation again*/
+    setTimeout(function (){
+        document.body.classList.remove("theme-loading");
+    },50);
+    
+}
+
+if (themeButton){
+    themeButton.addEventListener("click",function (){
+        toggleTheme();
+    }
+);
+}
+loadTheme();
+
+function updateCartCount() {
+
+    let cartCount = 0;
+
+    cart.forEach(function (item) {
+        cartCount += item.quantity;
+    });
+
+    let cartCountElement =
+        document.getElementById("cart-count");
+
+    if (cartCountElement) {
+        cartCountElement.textContent = cartCount;
+    }
+}
+updateCartCount();
+
+let contactForm = document.querySelector(".right-column form");
+
+function showToast(message, type) {
+    let toast = document.createElement("div");
+    toast.className = "toast " + type;
+    toast.textContent = message;
+
+    document.body.appendChild(toast);
+
+    setTimeout(function () {
+        toast.classList.add("show");
+    }, 100);
+
+    setTimeout(function () {
+        toast.classList.remove("show");
+
+        setTimeout(function () {
+            toast.remove();
+        }, 300);
+
+    }, 3000);
+}
+
+let name = contactForm.querySelector('input[name="name"]');
+let email = contactForm.querySelector('input[name="email"]');
+let phone = contactForm.querySelector('input[name="phone"]');
+let subject = contactForm.querySelector('input[name="subject"]');
+let message = contactForm.querySelector('textarea[name="message"]');
+
+contactForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+});
+
+if (contactForm) {
+    contactForm.addEventListener(
+        "submit",
+        function (event) {
+            event.preventDefault();
+            let name = contactForm.querySelector('input[name="name"]');
+            let email = contactForm.querySelector('input[name="email"]');
+            let phone = contactForm.querySelector('input[name="phone"]');
+
+            let subject = contactForm.querySelector('input[name="subject"]');
+            let message = contactForm.querySelector('textarea[name="message"]');
+
+            if (!name.value.trim()) {
+                showToast("⚠ Please enter your name.","error");
+                return;
+            }
+
+            if (!email.value.trim()) {
+                showToast("⚠ Please enter your email address.","error");
+                return;
+            }
+
+            if (!email.validity.valid) {
+                showToast("⚠ Please enter a valid email address.","error");
+                return;
+            }
+
+            let phonePattern = /^[6-9]\d{9}$/;
+            if (!phone.value.trim()) {
+                showToast( "⚠ Please enter your phone number.","error");
+                return;
+            }
+
+            if (!phonePattern.test(phone.value.trim())) {
+                showToast("⚠ Please enter a valid 10-digit phone number.", 
+                "error");
+                return;
+            }
+
+ if (!subject.value.trim()) {
+                showToast("⚠ Please enter a subject.","error");
+                return;
+            }
+            if (!message.value.trim()) {
+                showToast("⚠ Please enter your message.","error");
+                return;
+            }
+            showToast("✓ Message sent successfully!","success");
+            contactForm.reset();
+        }
+    );
+}

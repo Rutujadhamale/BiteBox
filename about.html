@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/nightmode.css">
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family
@@ -27,10 +28,17 @@
       |
       <a href="contact.html">Contact</a>
 
-      <a href="cart.html">
-                <img src="assest/icon/cart.jpg" alt="Cart Icon" width="22" 
-                height="22">
+     <a href="cart.html" clss="cart-icon">
+        <span class="cart-wrapper">
+                <img src="assest/icon/cart.jpg" alt="Cart Icon" width="22" height="22">
+                <span id="cart-count">0</span>
+        </span>
             </a>
+
+            <button type="button" id="theme-toggle" class="theme-toggle">
+        <span class="theme-icon">☀</span>
+        <span class="theme-text"> DAY MODE</span>
+</button>
             </nav>
     </header>
 

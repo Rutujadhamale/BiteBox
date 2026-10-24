@@ -1118,3 +1118,24 @@ footer > p{
     padding: 18px 0;
     font-size: 15px;
 }
+
+.cart-wrapper {
+    position: relative;
+    display: inline-flex;
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    width: 18px;
+    height: 18px;
+    background: #ff3b30;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

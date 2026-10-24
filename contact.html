@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - BiteBox</title>
     <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/nightmode.css">
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family
@@ -24,10 +25,17 @@
       |
       <a href="contact.html" class="active">Contact</a>
 
-      <a href="cart.html">
-                <img src="assest/icon/cart.jpg" alt="Cart Icon" width="22" 
-                height="22">
+      <a href="cart.html" clss="cart-icon">
+        <span class="cart-wrapper">
+                <img src="assest/icon/cart.jpg" alt="Cart Icon" width="22" height="22">
+                <span id="cart-count">0</span>
+        </span>
             </a>
+
+            <button type="button" id="theme-toggle" class="theme-toggle">
+        <span class="theme-icon">☀</span>
+        <span class="theme-text"> DAY MODE</span>
+</button>
             </nav>
     </header>
 <section id="contact-hero">
@@ -121,22 +129,22 @@
             </div>
         </div>
     </div>
-    
+
     <div class="right-column">
         <h2>Send Us a Message</h2>
         <hr>
         <form>
             <div class="form-row">
-                <input type="text" placeholder="Your Name">
-                <input type="email" placeholder="Your Email">
+                <input type="text" name="name" placeholder="Your Name">
+                <input type="email" name="email" placeholder="Your Email">
             </div>
 
             <div class="form-row">
-                <input type="tel" placeholder="Phone Number">
-                <input type="text" placeholder="Subject">
+                <input type="tel" name="phone" placeholder="Phone Number">
+                <input type="text" name="subject" placeholder="Subject">
             </div>
 
- <textarea placeholder="Your Message"></textarea>
+ <textarea name="message" placeholder="Your Message"></textarea>
             <button>Send Message ✈</button>
         </form>
     </div>

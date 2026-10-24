@@ -1148,3 +1148,86 @@ footer > p{
     font-size: 15px;
 }
 
+.theme-toggle {
+    width: 125px;
+    height: 36px;
+    border: none;
+ border-radius: 20px;
+    background-color: #e5e5e5;
+    position: relative;
+    padding: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.theme-text {
+    position: absolute;
+    left: 8px;
+    right: 38px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #111111;
+    white-space: nowrap;
+    text-align: left;
+    transition: all 0.35s ease-in-out;
+}
+
+.theme-icon {
+    position: absolute;
+    top: 3px;
+    left: 92px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #111111;
+    transition: transform 0.35s ease-in-out;
+    z-index: 2;
+}
+
+.dark-theme .theme-icon {
+    transform: translateX(-89px);
+}
+
+.dark-theme .theme-text {
+    left: 38px;
+    right: 16px;
+    text-align: right;
+}
+
+.theme-toggle:hover .theme-icon {
+    transform: scale(1.05);
+}
+
+/* Keep smooth movement in Night Mode */
+.dark-theme .theme-toggle:hover .theme-icon {
+    transform: translateX(-89px) scale(1.05);
+}
+
+.cart-wrapper {
+    position: relative;
+    display: inline-flex;
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    width: 18px;
+    height: 18px;
+    background: #ff3b30;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

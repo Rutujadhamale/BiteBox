@@ -835,3 +835,53 @@ footer > p{
     padding: 18px 0;
     font-size: 15px;
 }
+
+.cart-wrapper {
+    position: relative;
+    display: inline-flex;
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    width: 18px;
+    height: 18px;
+    background: #ff3b30;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toast {
+    position: fixed;
+    top: 90px;
+    right: 25px;
+    min-width: 280px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateX(120%);
+    transition: 0.3s ease;
+    z-index: 9999;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.toast.error {
+    background: #e53935;
+}
+
+.toast.success {
+    background: #28a745;
+}

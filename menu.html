@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu - BiteBox</title>
     <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/nightmode.css">
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family
@@ -24,10 +25,17 @@
       |
       <a href="contact.html">Contact</a>
 
-      <a href="cart.html">
-                <img src="assest/icon/cart.jpg" alt="Cart Icon" width="22" 
-                height="22">
+      <a href="cart.html" clss="cart-icon">
+        <span class="cart-wrapper">
+                <img src="assest/icon/cart.jpg" alt="Cart Icon" width="22" height="22">
+                <span id="cart-count">0</span>
+        </span>
             </a>
+
+            <button type="button" id="theme-toggle" class="theme-toggle">
+        <span class="theme-icon">☀</span>
+        <span class="theme-text"> DAY MODE</span>
+</button>
             </nav>
 </header>
 
@@ -45,6 +53,13 @@
         Browse Categories
     <span></span>
 </h2>
+
+<div class="search-box">
+<input type="text" id="menu-search" placeholder="Search for dishes..."  width="30" height="20"> 
+    <button type="button" id="search-button">
+        <img src="assest/icon/search.jpg" alt="Search" width="30" height="20">
+    </button>
+</div>
 
     <div>
       <article>
@@ -76,7 +91,6 @@
         <h3>Desserts</h3>
       </article>
     </div>
-
 </section>
 
 <section id="menu-items">
@@ -87,7 +101,7 @@
 </h2>
    <div>
       
-       <article>
+       <article data-category="pizza">
         <span class="tag">Bestseller</span>
            <img src="assest/image/Pizza.jfif"  width="220">
             <h3>Margherita Pizza</h3>
@@ -99,11 +113,36 @@
                 <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
                 Add to Cart
             </button>
+            </article>
+
+      <article data-category="pizza">
+            <img src="assest/image/chessepizza.jpg" width="220">
+            <h3>Chesse Pizza</h3>
+            <p class="rating">
+                &#9733;&#9733;&#9733;&#9733;&#9733; 
+                <small>(120)</small> </p>
+            <p class="price">₹349</p>
+            <button> 
+                <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
+                Add to Cart
+            </button>
         </article>
 
-        <article>
+        <article data-category="burger">
             <img src="assest/image/Burger.jfif" width="220">
-            <h3>Cheese Burger</h3>
+            <h3> Classic Cheese Burger</h3>
+            <p class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;
+                <small>(98)</small></p>
+         <p class="price">₹299</p>
+   <button> 
+    <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
+                Add to Cart
+                </button>
+        </article>
+
+        <article data-category="burger">
+            <img src="assest/image/chesseburger.jpg" width="220">
+            <h3> Cheese Burger</h3>
             <p class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;
                 <small>(98)</small></p>
          <p class="price">₹199</p>
@@ -113,9 +152,22 @@
                 </button>
         </article>
 
-        <article>
+        <article data-category="pasta">
             <img src="assest/image/Pasta.jfif" width="220">
             <h3>Creamy Alfredo Pasta</h3>
+            <p class="rating"> &#9733;&#9733;&#9733;&#9733;&#9733;
+                <small> (85) </small>
+            </p>
+            <p class="price">₹249</p>
+            <button> 
+                <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
+                Add to Cart
+                </button>
+        </article>
+
+        <article data-category="pasta">
+            <img src="assest/image/italianpasta.jpg" width="220">
+            <h3>Italian Pasta</h3>
             <p class="rating"> &#9733;&#9733;&#9733;&#9733;&#9733;
                 <small> (85) </small>
             </p>
@@ -126,7 +178,7 @@
                 </button>
         </article>
 
-        <article>
+        <article data-category="biryani">
             <span class="tag spicy"></span>
             <img src="assest/image/veg biryani.jpg" width="220">
             <h3>Veg Biryani</h3>
@@ -139,7 +191,7 @@
                 </button>
         </article>
 
-        <article>
+        <article data-category="Desserts">
             <img src="assest/image/cakes.jpg" width="220">
             <h3>Choco Cake</h3>
             <p class="rating"> &#9733;&#9733;&#9733;&#9733;&#9733;
@@ -151,7 +203,19 @@
                 </button>
         </article>
 
-        <article>
+         <article data-category="Desserts">
+            <img src="assest/image/chessecake.jpg" width="220">
+            <h3>Chesse Cake</h3>
+            <p class="rating"> &#9733;&#9733;&#9733;&#9733;&#9733;
+                <small>(75)</small> </p>
+            <p class="price">₹199</p>
+            <button>
+            <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
+                Add to Cart
+                </button>
+        </article>
+
+        <article data-category="sandwich">
             <img src="assest/image/Sandwich.jfif" width="220">
             <h3>Veg Club Sandwich</h3>
             <p class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;
@@ -161,6 +225,18 @@
                 Add to Cart
                 </button>
         </article>
+
+         <article data-category="sandwich">
+            <img src="assest/image/paneersandwich.jpg" width="220">
+            <h3>Paneer Sandwich</h3>
+            <p class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;
+                <small>(60)</small> </p>
+            <p class="price">₹199</p>
+            <button> <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
+                Add to Cart
+                </button>
+        </article>
+
 
     </div>
 </section>
