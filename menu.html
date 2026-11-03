@@ -1,320 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu - BiteBox</title>
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/nightmode.css">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family
     =Montserrat:wght@400;600;700;800&family=Pacifico&family=Poppins:wght@300;
     400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
-        <img src="assest/image/logo.png" alt="BiteBox Logo" 
-        width="90">
-    <nav>
-      <a href="index.html">Home</a>
-      |
-      <a href="menu.html" class="active">Menu</a>
-      |
-      <a href="about.html">About</a>
-      |
-      <a href="contact.html">Contact</a>
+        <img src="assest/image/logo.png" alt="BiteBox Logo" width="90">
+        <nav>
+            <a href="index.html">Home</a>
+            |
+            <a href="menu.html" class="active">Menu</a>
+            |
+            <a href="about.html">About</a>
+            |
+            <a href="contact.html">Contact</a>
 
-      <a href="cart.html" clss="cart-icon">
-        <span class="cart-wrapper">
-                <img src="assest/icon/cart.jpg" alt="Cart Icon" width="22" height="22">
-                <span id="cart-count">0</span>
-        </span>
+            <a href="cart.html" clss="cart-icon">
+                <span class="cart-wrapper">
+                    <img src="assest/icon/cart.jpg" alt="Cart Icon" width="22" height="22">
+                    <span id="cart-count">0</span>
+                </span>
             </a>
 
             <button type="button" id="theme-toggle" class="theme-toggle">
-        <span class="theme-icon">☀</span>
-        <span class="theme-text"> DAY MODE</span>
-</button>
-            </nav>
-</header>
+                <span class="theme-icon">☀</span>
+                <span class="theme-text"> DAY MODE</span>
+            </button>
+        </nav>
+    </header>
 
     <section id="menu-hero">
-    <h1>Explore Our Delicious Menu</h1>
- 
-    <p>Discover freshly prepared pizzas, burgers, pasta,
-       biryani, desserts and many more delicious dishes
-       made with premium ingredients.
-    </p>
-  </section>
+        <h1>Explore Our Delicious Menu</h1>
 
-  <section id="categories">
-    <h2><span></span>
-        Browse Categories
-    <span></span>
-</h2>
+        <p>Discover freshly prepared pizzas, burgers, pasta,
+            biryani, desserts and many more delicious dishes
+            made with premium ingredients.
+        </p>
+    </section>
 
-<div class="search-box">
-<input type="text" id="menu-search" placeholder="Search for dishes..."  width="30" height="20"> 
-    <button type="button" id="search-button">
-        <img src="assest/icon/search.jpg" alt="Search" width="30" height="20">
-    </button>
-</div>
+    <section id="categories">
+        <h2><span></span>
+            Browse Categories
+            <span></span>
+        </h2>
 
-    <div>
-      <article>
-        <img src="assest/icon/pizza.jpg" alt="Pizza" width="120" height="120">
-        <h3>Pizza</h3>
-      </article>
+        <div class="menu-controls">
 
+            <div class="menu-search">
+                <input type="text" id="menu-search" placeholder="Search for dishes...">
 
-      <article>
-        <img src="assest/icon/burger.jpg" alt="Burger" width="120" height="120">
-        <h3>Burger</h3>
-      </article>
+                <button type="button" id="search-button">
+                    <img src="assest/icon/search.jpg" width="20" height="20">
+                </button>
+            </div>
 
+            <button type="button" id="add-menu-btn"> + Add Menu Item </button>
+        </div>
 
-      <article>
-        <img src="assest/icon/pasta.jpg" width="120" height="120">
-        <h3>Pasta</h3>
-      </article>
+        <div id="menu-modal" class="menu-modal">
+            <div class="menu-modal-content">
+                <div class="modal-header">
+                    <h2>Add Menu Item</h2>
+                </div>
 
+                <form id="menu-form">
 
-      <article>
-        <img src="assest/icon/biryani.jpg" width="120" height="120">
-        <h3>Biryani</h3>
-      </article>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="menu-name"> Menu Item Name </label>
+                            <input type="text" id="menu-name" placeholder="Enter item name" required>
+                        </div>
 
+                        <div class="form-group">
+                            <label for="menu-price"> Price (₹) </label>
+                            <input type="number" id="menu-price" placeholder="Enter price" required>
+                        </div>
 
-      <article>
-        <img src="assest/icon/cake.jpg" alt="Desserts" width="120" height="120">
-        <h3>Desserts</h3>
-      </article>
-    </div>
-</section>
+                    </div>
 
-<section id="menu-items">
-   <h2>
-    <span></span>
-    Popular Dishes
-<span></span>
-</h2>
-   <div>
-      
-       <article data-category="pizza">
-        <span class="tag">Bestseller</span>
-           <img src="assest/image/Pizza.jfif"  width="220">
-            <h3>Margherita Pizza</h3>
-            <p class="rating">
-                &#9733;&#9733;&#9733;&#9733;&#9733; 
-                <small>(120)</small> </p>
-            <p class="price">₹249</p>
-            <button> 
-                <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
-                Add to Cart
-            </button>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="menu-category"> Category </label>
+                            <input type="text" id="menu-category" placeholder="Enter category" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="menu-rating"> Rating (0 - 5) </label>
+                            <input type="text" id="menu-rating" placeholder="★★★★★" required>
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="menu-reviews"> Number of Reviews </label>
+                            <input type="number" id="menu-reviews" placeholder="Enter number of reviews" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="menu-image"> Image URL / Path </label>
+                            <input type="text" id="menu-image" placeholder="Enter image URL or path" required>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="cancel-menu-form"> Cancel </button>
+                        <button type="submit"> Add Menu Item </button>
+                    </div>
+
+                     <!-- <div class="menu-actions">
+                        <button type="button" class="update-menu-btn">
+                        <img src="assest/icon/edit.jpg">
+                   </button>
+              <button type="button" class="delete-menu-btn">
+                     <img src="assest/icon/delete.jpg">
+               </button>
+        </div> -->
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <article>
+                <img src="assest/icon/pizza.jpg" alt="Pizza" width="120" height="120">
+                <h3>Pizza</h3>
             </article>
 
-      <article data-category="pizza">
-            <img src="assest/image/chessepizza.jpg" width="220">
-            <h3>Chesse Pizza</h3>
-            <p class="rating">
-                &#9733;&#9733;&#9733;&#9733;&#9733; 
-                <small>(120)</small> </p>
-            <p class="price">₹349</p>
-            <button> 
-                <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
-                Add to Cart
-            </button>
-        </article>
 
-        <article data-category="burger">
-            <img src="assest/image/Burger.jfif" width="220">
-            <h3> Classic Cheese Burger</h3>
-            <p class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;
-                <small>(98)</small></p>
-         <p class="price">₹299</p>
-   <button> 
-    <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
-                Add to Cart
-                </button>
-        </article>
-
-        <article data-category="burger">
-            <img src="assest/image/chesseburger.jpg" width="220">
-            <h3> Cheese Burger</h3>
-            <p class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;
-                <small>(98)</small></p>
-         <p class="price">₹199</p>
-   <button> 
-    <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
-                Add to Cart
-                </button>
-        </article>
-
-        <article data-category="pasta">
-            <img src="assest/image/Pasta.jfif" width="220">
-            <h3>Creamy Alfredo Pasta</h3>
-            <p class="rating"> &#9733;&#9733;&#9733;&#9733;&#9733;
-                <small> (85) </small>
-            </p>
-            <p class="price">₹249</p>
-            <button> 
-                <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
-                Add to Cart
-                </button>
-        </article>
-
-        <article data-category="pasta">
-            <img src="assest/image/italianpasta.jpg" width="220">
-            <h3>Italian Pasta</h3>
-            <p class="rating"> &#9733;&#9733;&#9733;&#9733;&#9733;
-                <small> (85) </small>
-            </p>
-            <p class="price">₹229</p>
-            <button> 
-                <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
-                Add to Cart
-                </button>
-        </article>
-
-        <article data-category="biryani">
-            <span class="tag spicy"></span>
-            <img src="assest/image/veg biryani.jpg" width="220">
-            <h3>Veg Biryani</h3>
-            <p class="rating"> &#9733;&#9733;&#9733;&#9733;&#9733; 
-                <small>(110)</small> </p>
-            <p class="price">₹279</p>
-            <button> 
-                <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
-                Add to Cart
-                </button>
-        </article>
-
-        <article data-category="Desserts">
-            <img src="assest/image/cakes.jpg" width="220">
-            <h3>Choco Cake</h3>
-            <p class="rating"> &#9733;&#9733;&#9733;&#9733;&#9733;
-                <small>(75)</small> </p>
-            <p class="price">₹149</p>
-            <button>
-            <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
-                Add to Cart
-                </button>
-        </article>
-
-         <article data-category="Desserts">
-            <img src="assest/image/chessecake.jpg" width="220">
-            <h3>Chesse Cake</h3>
-            <p class="rating"> &#9733;&#9733;&#9733;&#9733;&#9733;
-                <small>(75)</small> </p>
-            <p class="price">₹199</p>
-            <button>
-            <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
-                Add to Cart
-                </button>
-        </article>
-
-        <article data-category="sandwich">
-            <img src="assest/image/Sandwich.jfif" width="220">
-            <h3>Veg Club Sandwich</h3>
-            <p class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;
-                <small>(60)</small> </p>
-            <p class="price">₹179</p>
-            <button> <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
-                Add to Cart
-                </button>
-        </article>
-
-         <article data-category="sandwich">
-            <img src="assest/image/paneersandwich.jpg" width="220">
-            <h3>Paneer Sandwich</h3>
-            <p class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;
-                <small>(60)</small> </p>
-            <p class="price">₹199</p>
-            <button> <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
-                Add to Cart
-                </button>
-        </article>
+            <article>
+                <img src="assest/icon/burger.jpg" alt="Burger" width="120" height="120">
+                <h3>Burger</h3>
+            </article>
 
 
-    </div>
-</section>
+            <article>
+                <img src="assest/icon/pasta.jpg" width="120" height="120">
+                <h3>Pasta</h3>
+            </article>
 
 
+            <article>
+                <img src="assest/icon/biryani.jpg" width="120" height="120">
+                <h3>Biryani</h3>
+            </article>
 
-<footer>
-    <div class="footer-container">
-    <section>
-        <img src="assest/image/logo.png" alt="BiteBox Logo" 
-        width="150">
-        <p> Delicious food delivered to your doorstep.
-            Fresh, fast and tasty!
-        </p>
 
-        <a href="#">
-            <img src="assest/icon/facebook.jpg" alt="Facebook" width="35" height="35">
-        </a>
-
-        <a href="#">
-            <img src="assest/icon/instagram.jpg" alt="Instagram" width="35" height="35">
-        </a>
-
-        <a href="#">
-            <img src="assest/icon/twitter.jpg" alt="Twitter" width="35" height="35">
-        </a>
-
- <a href="#">
-            <img src="assest/icon/youtube.jpg" alt="YouTube" width="35" height="35">
-        </a>
-    </section>
-<hr>
-    <section>
-        <h3>Quick Links</h3>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="cart.html">Cart</a></li>
-        </u >
-        </section>
-    <hr>
-
-    <section>
-        <h3>Customer Service</h3>
-        <ul>
-            <li>Track Order</li>
-            <li>FAQs</li>
-            <li>Shipping Policy</li>
-            <li>Return Policy</li>
-            <li>Terms & Conditions</li>
-        </ul>
-    </section>
- <hr>
-
-    <section>
-        <h3>Contact Us</h3>
-        <p>📞 +91 98765 43210</p>
-        <p>✉ support@bitebox.com</p>
-        <p>📍 123 Food Street, Mumbai, Maharashtra 400001 </p>
+            <article>
+                <img src="assest/icon/cake.jpg" alt="Desserts" width="120" height="120">
+                <h3>Desserts</h3>
+            </article>
+        </div>
     </section>
 
-    <hr>
-    
-    <section>
-        <h3>Payment Methods</h3>
-        <img src="assest/image/visa.jpg" alt="Visa" width="60">
-        <img src="assest/image/mastercard.jpg" alt="MasterCard" width="60">
-        <img src="assest/image/upi.jpg" alt="UPI" width="60">
-        <img src="assest/image/paytm.jpg"  alt="Paytm" width="60">
+    <section id="menu-items">
+        <h2>
+            <span></span>
+            Popular Dishes
+            <span></span>
+        </h2>
+        <div>
+
+            <div id="menu-container">
+                <article data-category="pizza">
+                    <span class="tag">Bestseller</span>
+                    <img src="assest/image/Pizza.jfif" width="220">
+                    <h3>Margherita Pizza</h3>
+                    <p class="rating">
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                        <small>(120)</small>
+                    </p>
+                    <p class="price">₹249</p>
+                    <button>
+                        <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
+                        Add to Cart
+                    </button>
+                </article>
+            </div>
+
+            <div id="menu-container">
+                <article data-category="pizza">
+                    <img src="assest/image/chessepizza.jpg" width="220">
+                    <h3>Chesse Pizza</h3>
+                    <p class="rating">
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                        <small>(120)</small>
+                    </p>
+                    <p class="price">₹349</p>
+                    <button>
+                        <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
+                        Add to Cart
+                    </button>
+                </article>
+            </div>
+
+            <div id="menu-container">
+                <article data-category="burger">
+                    <img src="assest/image/Burger.jfif" width="220">
+                    <h3> Classic Cheese Burger</h3>
+                    <p class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;
+                        <small>(98)</small>
+                    </p>
+                    <p class="price">₹299</p>
+                    <button>
+                        <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
+                        Add to Cart
+                    </button>
+                </article>
+            </div>
+
+            <div id="menu-container">
+                <article data-category="burger">
+                    <img src="assest/image/chesseburger.jpg" width="220">
+                    <h3> Cheese Burger</h3>
+                    <p class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;
+                        <small>(98)</small>
+                    </p>
+                    <p class="price">₹199</p>
+                    <button>
+                        <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
+                        Add to Cart
+                    </button>
+                </article>
+            </div>
+
+            <div id="menu-container">
+                <article data-category="pasta">
+                    <img src="assest/image/Pasta.jfif" width="220">
+                    <h3>Creamy Alfredo Pasta</h3>
+                    <p class="rating"> &#9733;&#9733;&#9733;&#9733;&#9733;
+                        <small> (85) </small>
+                    </p>
+                    <p class="price">₹249</p>
+                    <button>
+                        <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
+                        Add to Cart
+                    </button>
+                </article>
+            </div>
+
+            <div id="menu-container">
+                <article data-category="pasta">
+                    <img src="assest/image/italianpasta.jpg" width="220">
+                    <h3>Italian Pasta</h3>
+                    <p class="rating"> &#9733;&#9733;&#9733;&#9733;&#9733;
+                        <small> (85) </small>
+                    </p>
+                    <p class="price">₹229</p>
+                    <button>
+                        <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
+                        Add to Cart
+                    </button>
+                </article>
+            </div>
+
+            <div id="menu-container">
+                <article data-category="biryani">
+                    <span class="tag spicy"></span>
+                    <img src="assest/image/veg biryani.jpg" width="220">
+                    <h3>Veg Biryani</h3>
+                    <p class="rating"> &#9733;&#9733;&#9733;&#9733;&#9733;
+                        <small>(110)</small>
+                    </p>
+                    <p class="price">₹279</p>
+                    <button>
+                        <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
+                        Add to Cart
+                    </button>
+                </article>
+            </div>
+
+            <div id="menu-container">
+                <article data-category="Desserts">
+                    <img src="assest/image/cakes.jpg" width="220">
+                    <h3>Choco Cake</h3>
+                    <p class="rating"> &#9733;&#9733;&#9733;&#9733;&#9733;
+                        <small>(75)</small>
+                    </p>
+                    <p class="price">₹149</p>
+                    <button>
+                        <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
+                        Add to Cart
+                    </button>
+                </article>
+            </div>
+
+            <div id="menu-container">
+                <article data-category="Desserts">
+                    <img src="assest/image/chessecake.jpg" width="220">
+                    <h3>Chesse Cake</h3>
+                    <p class="rating"> &#9733;&#9733;&#9733;&#9733;&#9733;
+                        <small>(75)</small>
+                    </p>
+                    <p class="price">₹199</p>
+                    <button>
+                        <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
+                        Add to Cart
+                    </button>
+                </article>
+            </div>
+
+            <div id="menu-container">
+                <article data-category="sandwich">
+                    <img src="assest/image/Sandwich.jfif" width="220">
+                    <h3>Veg Club Sandwich</h3>
+                    <p class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;
+                        <small>(60)</small>
+                    </p>
+                    <p class="price">₹179</p>
+                    <button> <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
+                        Add to Cart
+                    </button>
+                </article>
+            </div>
+
+            <div id="menu-container">
+                <article data-category="sandwich">
+                    <img src="assest/image/paneersandwich.jpg" width="220">
+                    <h3>Paneer Sandwich</h3>
+                    <p class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;
+                        <small>(60)</small>
+                    </p>
+                    <p class="price">₹199</p>
+                    <button> <img src="assest/icon/add-card.jpg" alt="Cart" width="14" height="14">
+                        Add to Cart
+                    </button>
+                </article>
+            </div>
+
+
+        </div>
     </section>
 
-    <hr>
-</div>
-    <p> © 2026 BiteBox. All Rights Reserved. </p>
 
-</footer>
-  <script src ="js/script.js"> </script>
+
+    <footer>
+        <div class="footer-container">
+            <section>
+                <img src="assest/image/logo.png" alt="BiteBox Logo" width="150">
+                <p> Delicious food delivered to your doorstep.
+                    Fresh, fast and tasty!
+                </p>
+
+                <a href="#">
+                    <img src="assest/icon/facebook.jpg" alt="Facebook" width="35" height="35">
+                </a>
+
+                <a href="#">
+                    <img src="assest/icon/instagram.jpg" alt="Instagram" width="35" height="35">
+                </a>
+
+                <a href="#">
+                    <img src="assest/icon/twitter.jpg" alt="Twitter" width="35" height="35">
+                </a>
+
+                <a href="#">
+                    <img src="assest/icon/youtube.jpg" alt="YouTube" width="35" height="35">
+                </a>
+            </section>
+            <hr>
+            <section>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    </u>
+            </section>
+            <hr>
+
+            <section>
+                <h3>Customer Service</h3>
+                <ul>
+                    <li>Track Order</li>
+                    <li>FAQs</li>
+                    <li>Shipping Policy</li>
+                    <li>Return Policy</li>
+                    <li>Terms & Conditions</li>
+                </ul>
+            </section>
+            <hr>
+
+            <section>
+                <h3>Contact Us</h3>
+                <p>📞 +91 98765 43210</p>
+                <p>✉ support@bitebox.com</p>
+                <p>📍 123 Food Street, Mumbai, Maharashtra 400001 </p>
+            </section>
+
+            <hr>
+
+            <section>
+                <h3>Payment Methods</h3>
+                <img src="assest/image/visa.jpg" alt="Visa" width="60">
+                <img src="assest/image/mastercard.jpg" alt="MasterCard" width="60">
+                <img src="assest/image/upi.jpg" alt="UPI" width="60">
+                <img src="assest/image/paytm.jpg" alt="Paytm" width="60">
+            </section>
+
+            <hr>
+        </div>
+        <p> © 2026 BiteBox. All Rights Reserved. </p>
+
+    </footer>
+    <script src="js/script.js"> </script>
 </body>
+
 </html>

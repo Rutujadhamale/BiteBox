@@ -451,6 +451,8 @@ function updateCartCount() {
 }
 updateCartCount();
 
+//---------FORM MANIPULATION----------------------
+
 let contactForm = document.querySelector(".right-column form");
 
 function showToast(message, type) {
@@ -459,7 +461,6 @@ function showToast(message, type) {
     toast.textContent = message;
 
     document.body.appendChild(toast);
-
     setTimeout(function () {
         toast.classList.add("show");
     }, 100);
@@ -470,69 +471,223 @@ function showToast(message, type) {
         setTimeout(function () {
             toast.remove();
         }, 300);
-
     }, 3000);
 }
 
-let name = contactForm.querySelector('input[name="name"]');
-let email = contactForm.querySelector('input[name="email"]');
-let phone = contactForm.querySelector('input[name="phone"]');
-let subject = contactForm.querySelector('input[name="subject"]');
-let message = contactForm.querySelector('textarea[name="message"]');
+if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let name = contactForm.querySelector('input[name="name"]');
+        let email = contactForm.querySelector('input[name="email"]');
+        let phone = contactForm.querySelector('input[name="phone"]');
+        let subject = contactForm.querySelector('input[name="subject"]');
+        let message = contactForm.querySelector('textarea[name="message"]');
+        if (!name.value.trim()) {
+            showToast("Please enter your name..", "error");
+            return;
+        }
+        if (!email.value.trim()) {
+            showToast("Please enter your email address..", "email");
+            return;
+        }
+        let phonePattern = /^[6-9]\d{9}$/;
+        if (!phone.value.trim()) {
+            showToast("⚠ Please enter your phone number.", "error");
+            return;
+        }
 
-contactForm.addEventListener("submit", function (event) {
-    event.preventDefault();
+        if (!phonePattern.test(phone.value.trim())) {
+            showToast("⚠ Please enter a valid 10-digit phone number.",
+                "error");
+            return;
+        }
+        if (!message.value.trim()) {
+            showToast("Please enter your message..", "error");
+            return;
+        }
+        showToast("Message sent successfully!", "success");
+        contactForm.reset();
+    });
+}
+
+// ===================== MENU FORM =====================
+
+const addMenuBtn = document.getElementById("add-menu-btn");
+const menuModal = document.getElementById("menu-modal");
+const cancelMenuForm = document.getElementById("cancel-menu-form");
+
+
+addMenuBtn.addEventListener("click", function () {
+    menuModal.classList.add("show");
 });
 
-if (contactForm) {
-    contactForm.addEventListener(
-        "submit",
-        function (event) {
-            event.preventDefault();
-            let name = contactForm.querySelector('input[name="name"]');
-            let email = contactForm.querySelector('input[name="email"]');
-            let phone = contactForm.querySelector('input[name="phone"]');
+cancelMenuForm.addEventListener("click", function () {
+    menuModal.classList.remove("show");
+});
 
-            let subject = contactForm.querySelector('input[name="subject"]');
-            let message = contactForm.querySelector('textarea[name="message"]');
 
-            if (!name.value.trim()) {
-                showToast("⚠ Please enter your name.","error");
-                return;
-            }
+const menuForm = document.getElementById("menu-form");
 
-            if (!email.value.trim()) {
-                showToast("⚠ Please enter your email address.","error");
-                return;
-            }
+menuForm.addEventListener("submit", async function (event) {
 
-            if (!email.validity.valid) {
-                showToast("⚠ Please enter a valid email address.","error");
-                return;
-            }
+    event.preventDefault();
 
-            let phonePattern = /^[6-9]\d{9}$/;
-            if (!phone.value.trim()) {
-                showToast( "⚠ Please enter your phone number.","error");
-                return;
-            }
+    const name = document.getElementById("menu-name").value;
+    const price = document.getElementById("menu-price").value;
+    const category = document.getElementById("menu-category").value;
+    const rating = document.getElementById("menu-rating").value;
+    const reviews = document.getElementById("menu-reviews").value;
+    const image = document.getElementById("menu-image").value;
 
-            if (!phonePattern.test(phone.value.trim())) {
-                showToast("⚠ Please enter a valid 10-digit phone number.", 
-                "error");
-                return;
-            }
+    const menuItem = {
+        name: name,
+        price: price,
+        category: category,
+        rating: rating,
+        reviews: reviews,
+        image: image
+    };
 
- if (!subject.value.trim()) {
-                showToast("⚠ Please enter a subject.","error");
-                return;
-            }
-            if (!message.value.trim()) {
-                showToast("⚠ Please enter your message.","error");
-                return;
-            }
-            showToast("✓ Message sent successfully!","success");
-            contactForm.reset();
-        }
-    );
+    console.log(menuItem);
+
+    const API_URL = "https://6ae4942228393034b08db984.mockapi.io/menu";
+    	
+const card = button.closest("article");
+
+   try{
+    const response = await fetch(API_URL, {
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify(menuItem)
+    });
+    const data = await response.json();
+    console.log("Menu item added:",data);
+    displayMenuItems([data]);
+     menuModal.classList.remove("show");
+        menuForm.reset();
+   }catch(error){
+    console.error("Error adding menu item:",error);
+   }
+   displayMenuItems([menuItem]);
+});
+
+async function fetchMenuItems(){
+    try{
+        const response = await fetch(API_URL);
+        const menuItems = await response.json();
+        console.log("Menu items fetched:", menuItems);
+    }catch(error){
+        console.log("Error fetching menu items:", error);
+    }
 }
+    
+    function displayMenuItems(menuItems) {
+    const menuContainer = document.getElementById("menu-container");
+    menuItems.forEach(menuItem => {
+        const card = document.createElement("article");
+        card.dataset.category = menuItem.category;
+        card.classList.add("api-menu-card");
+        card.dataset.id = menuItem.id;
+        card.innerHTML = `
+            <img src="${menuItem.image}" alt="${menuItem.name}">
+            <h3>${menuItem.name}</h3>
+            <p class="rating">${menuItem.rating} 
+            <small>(${menuItem.reviews})</small>
+            </p>
+            <p class="price">₹${menuItem.price}</p>
+         <div class="menu-actions">
+          <button type="button" class="update-menu-btn">
+            <img src="assest/icon/edit.jpg">
+          </button>
+                   <button type="button" class="delete-menu-btn">
+             <img src="assest/icon/delete.jpg">
+          </button>
+        </div>
+
+            <button>
+                <img src="assest/icon/cart.jpg" alt="Cart" 
+                width="14" height="14">
+                Add to Cart
+            </button>
+        `;
+        menuContainer.appendChild(card);
+    });
+}
+
+document.getElementById("menu-container").addEventListener("click", function (event) {
+    if (event.target.closest(".update-menu-btn")) {
+        const button = event.target.closest(".update-menu-btn");
+        const card = button.closest("article");
+        const menuId = card.dataset.id;
+        updateMenuId = menuId;
+
+        console.log("Menu ID:", menuId);
+        
+        const menuName = card.querySelector("h3").textContent;
+        const price = card.querySelector(".price").textContent.replace("₹", "").trim();
+        const rating = card.querySelector(".rating").childNodes[0].textContent.trim();
+        const reviews = card.querySelector(".rating small").textContent.replace("(", "")
+        .replace(")", "").trim();
+        const category = card.dataset.category;
+        const image = card.querySelector("img").src;
+
+        console.log("Update clicked for:", menuName);
+        console.log("Price:", price);
+        console.log("Category:", category);
+        console.log("Rating:", rating);
+        console.log("Reviews:", reviews);
+        console.log("Image:", image);
+    }
+});
+
+document.getElementById("menu-container").addEventListener("click", function (event) {
+
+    if (event.target.closest(".update-menu-btn")) {
+
+        const button = event.target.closest(".update-menu-btn");
+        const card = button.closest("article");
+
+
+        const menuName = card.querySelector("h3").textContent;
+
+        const price = card.querySelector(".price").textContent
+            .replace("₹", "") .trim();
+
+        const rating = card.querySelector(".rating").childNodes[0]
+            .textContent.trim();
+
+        const reviews = card.querySelector(".rating small").textContent
+            .replace("(", "").replace(")", "").trim();
+
+        const category = card.dataset.category;
+
+        const image = card.querySelector("img").src;
+
+
+        document.getElementById("menu-name").value = menuName;
+
+        document.getElementById("menu-price").value = price;
+
+        document.getElementById("menu-category").value = category;
+
+        document.getElementById("menu-rating").value = rating;
+
+        document.getElementById("menu-reviews").value = reviews;
+
+        document.getElementById("menu-image").value = image;
+
+
+        document.querySelector(".modal-header h2").textContent = "Update Menu Item";
+
+        document.querySelector("#menu-form button[type='submit']").textContent =
+            "Update Menu Item";
+
+        menuModal.classList.add("show");
+
+    }
+
+});
+
+       
